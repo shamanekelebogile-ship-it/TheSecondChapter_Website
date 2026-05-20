@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Second Chapter | Contact Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <h1>The Second <span>Chapter</span></h1>
+                    <p>Community Book Exchange & Literary Hub</p>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Programmes</a></li>
+                    <li><a href="enquiry.html">Get Involved</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Visit one of our two community hubs</p>
+        </div>
+    </section>
+
+    <!-- TWO LOCATIONS (Required by assignment) -->
+    <section class="locations">
+        <div class="container">
+            <div class="location-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Braamfontein Hub</h3>
+                <p>23 Jorissen Street, Braamfontein</p>
+                <p>Johannesburg, 2001</p>
+                <p><strong>Hours:</strong> Mon-Fri 9AM-6PM, Sat 10AM-2PM</p>
+                <div class="map-placeholder"><i class="fas fa-map"></i> Map: Corner of Jorissen & Bertha Street</div>
+            </div>
+            <div class="location-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Soweto Hub</h3>
+                <p>987 Vilakazi Street, Orlando West</p>
+                <p>Soweto, 1804</p>
+                <p><strong>Hours:</strong> Tue-Fri 10AM-7PM, Sat 9AM-1PM</p>
+                <div class="map-placeholder"><i class="fas fa-map"></i> Map: Near Nelson Mandela Museum</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Name *</label>
+                            <input type="text" id="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email *</label>
+                            <input type="email" id="contactEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message *</label>
+                        <textarea id="contactMessage" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div id="contactFormMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>The Second <span>Chapter</span></h3>
+                    <p>Creating readers, building futures.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Programmes</a></li>
+                        <li><a href="enquiry.html">Volunteer</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Braamfontein & Soweto</li>
+                        <li><i class="fas fa-envelope"></i> hello@secondchapter.org.za</li>
+                        <li><i class="fas fa-phone"></i> +27 11 123 4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Second Chapter. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

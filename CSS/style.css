@@ -1,0 +1,1244 @@
+
+
+/* ========== SECTION 1: CSS RESET ========== */
+/* This resets all default browser margins and paddings 
+   to ensure consistent styling across Chrome, Firefox, Edge, etc. */
+* {
+    margin: 0;           /* Remove default margins from all elements */
+    padding: 0;          /* Remove default padding from all elements */
+    box-sizing: border-box; /* Makes width calculations include padding/border */
+}
+
+/* ========== SECTION 2: BASE STYLES ========== */
+/* Setting a base font size using rem (relative unit) 
+   This makes the entire website scalable for accessibility */
+html {
+    font-size: 16px;     /* 1rem = 16px - base unit for all rem measurements */
+}
+
+/* Body styles - applies to the entire page */
+body {
+    font-family: 'Open Sans', sans-serif;  /* Clean, readable font from Google Fonts */
+    font-size: 1rem;                       /* 16px (relative to html) */
+    line-height: 1.6;                      /* Improves readability of text blocks */
+    color: #2d3436;                        /* Dark grey for text (easier on eyes than black) */
+    background-color: #fff;                /* White background */
+}
+
+/* Heading styles - using Playfair Display (elegant serif font) */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;  /* Serif font for headings (contrasts with body) */
+    font-weight: 700;                        /* Bold weight for headings */
+}
+
+/* Specific heading sizes using rem units (responsive) */
+h1 { font-size: 2.5rem; }   /* 40px - largest heading */
+h2 { font-size: 2rem; }     /* 32px - section titles */
+h3 { font-size: 1.5rem; }   /* 24px - card titles */
+h4 { font-size: 1.25rem; }  /* 20px - subheadings */
+
+/* Container class - centers content and sets max width */
+.container {
+    max-width: 1200px;      /* Maximum width for large screens */
+    margin: 0 auto;         /* Auto margins center the container horizontally */
+    padding: 0 1.25rem;     /* 20px padding on sides (uses rem) */
+}
+
+/* ========== SECTION 3: BUTTON STYLES ========== */
+/* Reusable button styles with hover effects */
+.btn {
+    display: inline-block;   /* Allows setting padding while staying inline */
+    padding: 0.75rem 1.75rem; /* 12px 28px - comfortable click area */
+    text-decoration: none;   /* Removes underline from links */
+    border-radius: 50px;     /* Pill-shaped buttons */
+    font-weight: 600;        /* Semi-bold text */
+    transition: all 0.3s ease; /* Smooth animation for hover effects */
+    cursor: pointer;         /* Changes cursor to hand on hover */
+    border: none;            /* Removes default border */
+    font-family: 'Open Sans', sans-serif; /* Consistent font */
+}
+
+/* Primary button - orange colour (brand colour) */
+.btn-primary {
+    background-color: #E76F51;  /* Terracotta orange - primary brand colour */
+    color: white;
+}
+
+/* Hover effect for primary buttons - changes colour and lifts up slightly */
+.btn-primary:hover {
+    background-color: #c75c3f;  /* Darker orange on hover */
+    transform: translateY(-2px); /* Lifts button up 2 pixels */
+    box-shadow: 0 5px 15px rgba(231, 111, 81, 0.3); /* Adds shadow effect */
+}
+
+/* Outline button - transparent with border */
+.btn-outline {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+/* Hover effect for outline buttons */
+.btn-outline:hover {
+    background-color: white;
+    color: #264653;  /* Changes to navy colour on hover */
+    transform: translateY(-2px);
+}
+
+/* Large button variant */
+.btn-large {
+    padding: 0.9375rem 2.1875rem; /* 15px 35px - larger click area */
+    font-size: 1.1rem;
+}
+
+/* ========== SECTION 4: HEADER & NAVIGATION ========== */
+/* Header styling - sticky navigation bar */
+header {
+    background-color: #264653;  /* Deep navy - primary brand colour */
+    padding: 1.25rem 0;         /* 20px top and bottom */
+    position: sticky;           /* Makes header stick to top when scrolling */
+    top: 0;                     /* Sticks to the very top */
+    z-index: 1000;              /* Ensures header stays above other content */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+/* Flexbox layout for header - logo on left, nav on right */
+header .container {
+    display: flex;
+    justify-content: space-between; /* Pushes logo and nav to opposite sides */
+    align-items: center;            /* Vertically centers items */
+    flex-wrap: wrap;                /* Allows wrapping on small screens */
+}
+
+/* Logo link styling - removes underline */
+.logo a {
+    text-decoration: none;
+}
+
+/* Logo heading */
+.logo h1 {
+    color: #F4F1DE;      /* Cream colour */
+    font-size: 1.8rem;
+}
+
+/* Orange "Chapter" word in logo */
+.logo h1 span {
+    color: #E76F51;      /* Terracotta orange accent */
+}
+
+/* Logo subheading */
+.logo p {
+    color: #2A9D8F;      /* Sage green - secondary brand colour */
+    font-size: 0.8rem;
+    letter-spacing: 1px;  /* Slight spacing between letters */
+}
+
+/* Navigation menu - horizontal list */
+.nav-menu {
+    display: flex;
+    list-style: none;      /* Removes bullet points */
+    gap: 2rem;             /* 32px space between nav items */
+}
+
+/* Navigation links */
+.nav-menu li a {
+    color: #F4F1DE;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;  /* Smooth colour transition on hover */
+    padding: 0.5rem 0;
+}
+
+/* Hover effect and active page indicator */
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: #E76F51;      /* Turns orange on hover */
+}
+
+/* Hamburger menu button - hidden on desktop, shown on mobile */
+.hamburger {
+    display: none;       /* Hidden by default */
+    cursor: pointer;
+}
+
+/* Hamburger icon lines */
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #F4F1DE;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+.hero {
+    min-height: 550px;
+    background: linear-gradient(rgba(38,70,83,0.7), rgba(38,70,83,0.7)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+
+/* Hero text container */
+.hero-content {
+    max-width: 800px;
+    padding: 2.5rem;
+}
+
+/* Main hero heading */
+.hero-content h2 {
+    font-size: 3rem;      /* Large eye-catching text */
+    margin-bottom: 1.25rem;
+}
+
+/* Orange accent in hero heading */
+.hero-content h2 span {
+    color: #E76F51;
+}
+
+/* Hero subheading */
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.875rem;
+}
+
+/* Button container - flexbox for centering */
+.hero-buttons {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ========== SECTION 6: STATISTICS SECTION ========== */
+/* Impact statistics section - animated numbers */
+.stats {
+    padding: 3.75rem 0;
+    background-color: #F4F1DE;  /* Cream background */
+}
+
+/* Flexbox layout for statistics */
+.stats .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+/* Individual stat item */
+.stat-item {
+    text-align: center;
+    flex: 1;              /* Each stat takes equal space */
+    min-width: 150px;     /* Minimum width before wrapping */
+}
+
+/* Stat icon - Font Awesome icons */
+.stat-icon i {
+    font-size: 3rem;
+    color: #E76F51;
+}
+
+/* Animated number */
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #264653;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Stat label text */
+.stat-label {
+    color: #666;
+    font-weight: 500;
+}
+
+/* ========== SECTION 7: PROGRAMMES SECTION ========== */
+/* Featured programmes grid */
+.featured-programmes {
+    padding: 5rem 0;
+}
+
+/* Section header - centred title and subtitle */
+.section-header {
+    text-align: center;
+    margin-bottom: 3.125rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #264653;
+    margin-bottom: 0.625rem;
+}
+
+.section-header p {
+    color: #666;
+}
+
+/* Programmes grid - uses Flexbox for responsive layout */
+.programmes-grid {
+    display: flex;
+    gap: 1.875rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Individual programme card */
+.programme-card {
+    background-color: #F4F1DE;
+    padding: 2.5rem 1.875rem;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+    min-width: 280px;
+    transition: transform 0.3s, box-shadow 0.3s;  /* Smooth hover animation */
+}
+
+/* Hover effect - card lifts up */
+.programme-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Card icon */
+.card-icon i {
+    font-size: 3rem;
+    color: #E76F51;
+    margin-bottom: 1.25rem;
+}
+
+/* Card heading */
+.programme-card h3 {
+    color: #264653;
+    margin-bottom: 0.9375rem;
+}
+
+/* "Learn More" link */
+.read-more {
+    display: inline-block;
+    margin-top: 0.9375rem;
+    color: #E76F51;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Arrow icon animation on hover */
+.read-more i {
+    transition: transform 0.3s;
+}
+
+.read-more:hover i {
+    transform: translateX(5px);  /* Arrow moves right on hover */
+}
+
+/* ========== SECTION 8: TESTIMONIALS ========== */
+/* Testimonial slider section */
+.testimonials {
+    padding: 5rem 0;
+    background-color: #264653;
+}
+
+/* White text for testimonial section header */
+.testimonials .section-header h2,
+.testimonials .section-header p {
+    color: white;
+}
+
+/* Slider container */
+.testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Individual testimonial card */
+.testimonial-card {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    margin: 1.25rem;
+    display: none;  /* Hidden by default - JS shows one at a time */
+}
+
+/* Active testimonial - visible one */
+.testimonial-card.active {
+    display: block;
+    animation: fadeIn 0.5s ease;  /* Fade-in animation */
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Quote icon */
+.testimonial-card i {
+    font-size: 2rem;
+    color: #E76F51;
+    margin-bottom: 1.25rem;
+}
+
+/* Testimonial text */
+.testimonial-card p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 1.25rem;
+}
+
+/* Author name */
+.testimonial-author h4 {
+    color: #264653;
+}
+
+/* Navigation dots for slider */
+.slider-dots {
+    text-align: center;
+    margin-top: 1.25rem;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #F4F1DE;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Active dot (current testimonial) */
+.dot.active {
+    background-color: #E76F51;
+}
+
+/* ========== SECTION 9: CALL TO ACTION ========== */
+/* CTA section - encourages user action */
+.cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #E76F51, #c75c3f);
+    text-align: center;
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.9375rem;
+}
+
+.cta-section p {
+    margin-bottom: 1.5625rem;
+    font-size: 1.1rem;
+}
+
+/* Override button style in CTA section */
+.cta-section .btn-primary {
+    background-color: white;
+    color: #E76F51;
+}
+
+.cta-section .btn-primary:hover {
+    background-color: #264653;
+    color: white;
+}
+
+/* ========== SECTION 10: PAGE BANNER (Inner Pages) ========== */
+/* Banner at top of inner pages (About, Contact, etc.) */
+.page-banner {
+    background: linear-gradient(135deg, #264653, #2A9D8F);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.page-banner h1 {
+    font-size: 3rem;
+    margin-bottom: 0.9375rem;
+}
+
+/* ========== SECTION 11: ABOUT PAGE ========== */
+/* Our story section */
+.our-story {
+    padding: 5rem 0;
+}
+
+/* Two-column grid for story and image */
+.story-grid {
+    display: flex;
+    gap: 3.125rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.story-content {
+    flex: 1;  /* Takes half the space */
+}
+
+.story-content h2 {
+    color: #264653;
+    margin-bottom: 1.25rem;
+}
+
+/* Introductory text with accent colour */
+.story-intro {
+    font-size: 1.2rem;
+    color: #E76F51;
+    margin-bottom: 1.25rem;
+}
+
+/* Statistics inside story section */
+.story-stats {
+    display: flex;
+    gap: 1.875rem;
+    margin-top: 1.875rem;
+}
+
+.story-stat {
+    text-align: center;
+}
+
+.story-stat .stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #E76F51;
+    display: block;
+}
+
+/* Story image placeholder */
+.story-image {
+    flex: 1;
+    background-color: #F4F1DE;
+    border-radius: 15px;
+    padding: 3.75rem;
+    text-align: center;
+}
+
+.story-image i {
+    font-size: 5rem;
+    color: #E76F51;
+}
+
+/* ========== SECTION 12: MISSION & VISION ========== */
+.mission-vision {
+    padding: 3.75rem 0;
+    background-color: #F4F1DE;
+}
+
+/* Two-column layout */
+.mission-vision .container {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.mission-card, .vision-card {
+    flex: 1;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.card-icon i {
+    font-size: 3rem;
+    color: #E76F51;
+    margin-bottom: 1.25rem;
+}
+
+.mission-card h3, .vision-card h3 {
+    color: #264653;
+    margin-bottom: 0.9375rem;
+}
+
+/* ========== SECTION 13: CORE VALUES ========== */
+.core-values {
+    padding: 5rem 0;
+}
+
+.core-values h2 {
+    text-align: center;
+    color: #264653;
+    margin-bottom: 3.125rem;
+}
+
+/* Four-column grid for values */
+.values-grid {
+    display: flex;
+    gap: 1.875rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.value-item {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    padding: 1.875rem;
+}
+
+.value-item i {
+    font-size: 2.5rem;
+    color: #E76F51;
+    margin-bottom: 0.9375rem;
+}
+
+.value-item h4 {
+    color: #264653;
+    margin-bottom: 0.625rem;
+}
+
+/* ========== SECTION 14: TEAM SECTION ========== */
+.team-section {
+    padding: 5rem 0;
+    background-color: #F4F1DE;
+}
+
+.team-section h2 {
+    text-align: center;
+    color: #264653;
+    margin-bottom: 3.125rem;
+}
+
+/* Team member grid */
+.team-grid {
+    display: flex;
+    gap: 1.875rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-card {
+    background-color: white;
+    padding: 1.875rem;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+    min-width: 220px;
+    transition: transform 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-image i {
+    font-size: 4rem;
+    color: #2A9D8F;
+}
+
+.team-card h3 {
+    color: #264653;
+    margin: 0.9375rem 0 0.3125rem;
+}
+
+.team-title {
+    color: #E76F51;
+    font-weight: 600;
+    margin-bottom: 0.625rem;
+}
+
+.team-bio {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* ========== SECTION 15: PROGRAMMES DETAIL PAGE ========== */
+.programmes-list {
+    padding: 3.75rem 0;
+}
+
+/* Individual programme item */
+.programme-detail {
+    display: flex;
+    gap: 1.875rem;
+    margin-bottom: 3.125rem;
+    padding: 1.875rem;
+    background-color: #F4F1DE;
+    border-radius: 15px;
+    flex-wrap: wrap;
+}
+
+.programme-icon i {
+    color: #E76F51;
+}
+
+.programme-detail-content {
+    flex: 1;
+}
+
+.programme-detail-content h2 {
+    color: #264653;
+    margin-bottom: 0.625rem;
+}
+
+/* Programme schedule with icon */
+.programme-schedule {
+    color: #E76F51;
+    font-weight: 600;
+    margin-bottom: 0.9375rem;
+}
+
+.programme-schedule i {
+    margin-right: 8px;
+}
+
+/* Highlights list */
+.programme-highlights {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+}
+
+.highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.highlight i {
+    color: #2A9D8F;
+}
+
+/* ========== SECTION 16: ENQUIRY PAGE ========== */
+/* Ways to help section */
+.ways-to-help {
+    padding: 3.75rem 0;
+}
+
+.help-grid {
+    display: flex;
+    gap: 1.875rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.help-card {
+    flex: 1;
+    min-width: 280px;
+    background-color: #F4F1DE;
+    padding: 1.875rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.help-card:hover {
+    transform: translateY(-5px);
+}
+
+.help-card i {
+    font-size: 3rem;
+    color: #E76F51;
+    margin-bottom: 0.9375rem;
+}
+
+.help-card h3 {
+    color: #264653;
+    margin-bottom: 0.9375rem;
+}
+
+.help-card ul {
+    list-style: none;
+    margin-top: 1.25rem;
+    text-align: left;
+}
+
+.help-card ul li {
+    margin: 0.625rem 0;
+}
+
+.help-card ul li i {
+    font-size: 1rem;
+    margin-right: 0.625rem;
+    color: #2A9D8F;
+}
+
+/* ========== SECTION 17: FORM STYLES ========== */
+.enquiry-form-section, .contact-form-section {
+    padding: 3.75rem 0;
+    background-color: #F4F1DE;
+}
+
+/* Form container - white card */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+    color: #264653;
+    margin-bottom: 0.625rem;
+}
+
+/* Form group - each label + input pair */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #264653;
+}
+
+/* Form input styling */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 0.9375rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Open Sans', sans-serif;
+    transition: border 0.3s;
+}
+
+/* Focus effect on inputs */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #E76F51;  /* Orange border on focus */
+}
+
+/* Two-column layout for form rows */
+.form-row {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Form message container (success/error) */
+.form-message {
+    margin-top: 1.25rem;
+    padding: 0.9375rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Success message styling */
+.success-message {
+    background-color: #2A9D8F;
+    color: white;
+}
+
+/* Error message styling */
+.error-message {
+    background-color: #E76F51;
+    color: white;
+}
+
+/* ========== SECTION 18: CONTACT PAGE (2 LOCATIONS) ========== */
+/* Two locations section - required by assignment */
+.locations {
+    padding: 3.75rem 0;
+}
+
+/* Flexbox for two location cards */
+.locations .container {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+
+/* Individual location card */
+.location-card {
+    flex: 1;
+    background-color: #F4F1DE;
+    padding: 1.875rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+}
+
+.location-card i {
+    font-size: 2rem;
+    color: #E76F51;
+    margin-bottom: 0.9375rem;
+}
+
+.location-card h3 {
+    color: #264653;
+    margin-bottom: 0.9375rem;
+}
+
+/* Map placeholder - shows where map would be */
+.map-placeholder {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    background-color: #ddd;
+    border-radius: 10px;
+    color: #666;
+}
+
+/* ========== SECTION 19: CONTACT INFO ========== */
+.contact-info {
+    padding: 3.75rem 0;
+}
+
+.contact-info .container {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info-item {
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+}
+
+.info-item i {
+    font-size: 2rem;
+    color: #E76F51;
+    margin-bottom: 0.625rem;
+}
+
+/* ========== SECTION 20: FOOTER ========== */
+footer {
+    background-color: #1a3a44;  /* Darker navy for footer */
+    color: #F4F1DE;
+    padding: 3.75rem 0 1.25rem;
+}
+
+/* Footer grid layout */
+.footer-grid {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+
+.footer-about {
+    flex: 2;
+    min-width: 250px;
+}
+
+.footer-about h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.9375rem;
+}
+
+.footer-about h3 span {
+    color: #E76F51;
+}
+
+.footer-links {
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    margin-bottom: 1.25rem;
+    color: #E76F51;
+}
+
+.footer-links ul,
+.footer-contact ul {
+    list-style: none;
+}
+
+.footer-links ul li,
+.footer-contact ul li {
+    margin-bottom: 0.625rem;
+}
+
+.footer-links ul li a {
+    color: #F4F1DE;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #E76F51;
+}
+
+.footer-contact ul li i {
+    margin-right: 0.625rem;
+    color: #E76F51;
+}
+
+/* Social media icons */
+.social-links {
+    margin-top: 1.25rem;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 0.625rem;
+    color: #F4F1DE;
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #E76F51;
+    transform: translateY(-3px);
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.25rem;
+    border-top: 1px solid #3a5a64;
+}
+
+/* ========== SECTION 21: RESPONSIVE IMAGES ========== */
+/* Ensures all images scale properly on different screen sizes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* ========== SECTION 22: RESPONSIVE DESIGN - MEDIA QUERIES ========== */
+/* 
+   BREAKPOINTS:
+   - Desktop: 1024px and above (full layout)
+   - Tablet: 769px to 1023px (2-column layout)
+   - Mobile: 481px to 768px (single column, hamburger menu)
+   - Small Mobile: 480px and below (single column, smaller fonts)
+*/
+
+/* TABLET BREAKPOINT (769px - 1023px) */
+@media (max-width: 1023px) and (min-width: 769px) {
+    .container {
+        max-width: 90%;
+    }
+    
+    /* Reduce gap between programme cards on tablet */
+    .programmes-grid {
+        gap: 1.25rem;
+    }
+    
+    /* Smaller programme cards on tablet */
+    .programme-card {
+        min-width: 220px;
+    }
+    
+    /* Smaller hero heading on tablet */
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    /* Reduce gap between stats */
+    .stats .container {
+        gap: 1.875rem;
+    }
+}
+
+/* MOBILE BREAKPOINT (up to 768px) */
+@media (max-width: 768px) {
+    /* Reduce base font size on mobile for better readability */
+    html {
+        font-size: 14px;  /* 1rem = 14px on mobile */
+    }
+    
+    /* Show hamburger menu button */
+    .hamburger {
+        display: block;
+    }
+    
+    /* Hide navigation menu by default (off-screen) */
+    .nav-menu {
+        position: fixed;
+        left: -100%;           /* Hidden off-screen to the left */
+        top: 80px;
+        flex-direction: column;
+        background-color: #264653;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 1.25rem 0;
+        z-index: 999;
+        gap: 1rem;
+    }
+    
+    /* When active class is added, menu slides in */
+    .nav-menu.active {
+        left: 0;              /* Slides in from left */
+    }
+    
+    /* Smaller hero heading on mobile */
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    /* Smaller section titles on mobile */
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* Stack stats vertically on mobile */
+    .stats .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.875rem;
+    }
+    
+    /* Stack programme cards vertically */
+    .programmes-grid {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    
+    .programme-card {
+        min-width: auto;
+    }
+    
+    /* Stack about page columns */
+    .story-grid {
+        flex-direction: column;
+    }
+    
+    /* Stack mission and vision cards */
+    .mission-vision .container {
+        flex-direction: column;
+    }
+    
+    /* Stack form rows */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    /* Stack location cards */
+    .locations .container {
+        flex-direction: column;
+    }
+    
+    /* Stack buttons vertically */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Full width buttons on mobile */
+    .btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+    
+    /* Stack footer columns */
+    .footer-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Center social links */
+    .social-links {
+        justify-content: center;
+    }
+    
+    /* Stack team cards */
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Stack values */
+    .values-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Stack help cards */
+    .help-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Stack story statistics */
+    .story-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    /* Stack programme details */
+    .programme-detail {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Center programme highlights */
+    .programme-highlights {
+        justify-content: center;
+    }
+}
+
+/* SMALL MOBILE BREAKPOINT (up to 480px) */
+@media (max-width: 480px) {
+    /* Smaller padding on containers */
+    .container {
+        padding: 0 0.9375rem;
+    }
+    
+    /* Even smaller hero heading */
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Smaller hero padding */
+    .hero-content {
+        padding: 1.25rem;
+    }
+    
+    /* Smaller page banner heading */
+    .page-banner h1 {
+        font-size: 2rem;
+    }
+    
+    /* Smaller stat numbers */
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    /* Smaller location card padding */
+    .location-card {
+        padding: 1.25rem;
+    }
+    
+    /* Smaller form container padding */
+    .form-container {
+        padding: 1.25rem;
+    }
+}
+
