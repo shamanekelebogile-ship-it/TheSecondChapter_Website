@@ -3,177 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Second Chapter | Get Involved</title>
+    <title>Enquiry | Green Planet Initiative</title>
+    <meta name="description" content="Submit your enquiry about our eco-friendly products, services, volunteering, or sponsorship opportunities.">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
     <header>
-        <div class="container">
+        <nav>
             <div class="logo">
-                <a href="index.html">
-                    <h1>The Second <span>Chapter</span></h1>
-                    <p>Community Book Exchange & Literary Hub</p>
-                </a>
+                <h1>🌍 Green Planet</h1>
             </div>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Programmes</a></li>
-                    <li><a href="enquiry.html" class="active">Get Involved</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="enquiry.html" class="active">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="page-banner">
-        <div class="container">
-            <h1>Get Involved</h1>
-            <p>Volunteer, sponsor, or donate — every contribution matters</p>
-        </div>
-    </section>
+    <main>
+        <h1>Enquiry Form</h1>
+        <p>Fill in the form below to enquire about our services, products, or to become a volunteer or sponsor.</p>
 
-    <section class="ways-to-help">
-    <div class="container">
-        <div class="help-grid">
-            
-            <!-- HELP CARD 1: VOLUNTEER -->
-            <div class="help-card">
-                <img src="images/volunteer.jpg" alt="Volunteer helping" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
-                <i class="fas fa-hands-helping"></i>
-                <h3>Become a Volunteer</h3>
-                <p>Help with reading clubs, mobile library, administration, or events.</p>
-                <ul>
-                    <li><i class="fas fa-clock"></i> Flexible hours</li>
-                    <li><i class="fas fa-chalkboard-user"></i> Training provided</li>
-                    <li><i class="fas fa-heart"></i> Make a direct impact</li>
-                </ul>
+        <form id="enquiryForm" novalidate>
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required minlength="2" maxlength="50">
+                <small class="error-message" id="nameError"></small>
             </div>
-            
-            <!-- HELP CARD 2: SPONSOR -->
-            <div class="help-card">
-                <img src="images/community-reading.jpg" alt="Sponsorship impact" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
-                <i class="fas fa-building"></i>
-                <h3>Become a Sponsor</h3>
-                <p>Corporate partnerships that create lasting community impact.</p>
-                <ul>
-                    <li><i class="fas fa-trophy"></i> Brand visibility</li>
-                    <li><i class="fas fa-chart-line"></i> Measurable social impact</li>
-                    <li><i class="fas fa-file-invoice"></i> B-BBEE recognition</li>
-                </ul>
-            </div>
-            
-            <!-- HELP CARD 3: DONATE BOOKS -->
-            <div class="help-card">
-                <img src="images/hero-bg.jpg" alt="Book donation" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
-                <i class="fas fa-book"></i>
-                <h3>Donate Books</h3>
-                <p>Gently used books accepted at both physical locations.</p>
-                <ul>
-                    <li><i class="fas fa-children"></i> Children's books needed</li>
-                    <li><i class="fas fa-book-open"></i> Adult fiction & non-fiction</li>
-                    <li><i class="fas fa-graduation-cap"></i> Educational materials</li>
-                </ul>
-            </div>
-            
-        </div>
-    </div>
-</section>
-     
 
-    <section class="enquiry-form-section">
-        <div class="container">
-            <div class="form-container">
-                <h2>Volunteer / Sponsor Enquiry Form</h2>
-                <p>Fill out the form below and we'll get back to you within 48 hours.</p>
-                <form id="enquiryForm">
-                    <div class="form-group">
-                        <label for="fullName">Full Name *</label>
-                        <input type="text" id="fullName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="enquiryType">I am interested in *</label>
-                        <select id="enquiryType" required>
-                            <option value="">-- Select one --</option>
-                            <option value="volunteer">Becoming a Volunteer</option>
-                            <option value="sponsor">Becoming a Sponsor</option>
-                            <option value="donate">Donating Books</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Tell us more about how you'd like to help *</label>
-                        <textarea id="message" rows="5" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="preferredLocation">Preferred Location</label>
-                        <select id="preferredLocation">
-                            <option value="">-- Select a location --</option>
-                            <option value="braamfontein">Braamfontein Hub</option>
-                            <option value="soweto">Soweto Hub</option>
-                            <option value="mobile">Mobile Library</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit Enquiry</button>
-                    <div id="formMessage" class="form-message"></div>
-                </form>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                <small class="error-message" id="emailError"></small>
             </div>
-        </div>
-    </section>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="0821234567" pattern="[0-9]{10}">
+                <small class="error-message" id="phoneError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="enquiryType">Enquiry Type *</label>
+                <select id="enquiryType" name="enquiry_type" required>
+                    <option value="">Select an option</option>
+                    <option value="service">Service Enquiry</option>
+                    <option value="product">Product Enquiry</option>
+                    <option value="volunteer">Volunteer Opportunity</option>
+                    <option value="sponsor">Sponsorship</option>
+                </select>
+                <small class="error-message" id="enquiryTypeError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your enquiry..." required minlength="10" maxlength="500"></textarea>
+                <small class="error-message" id="messageError"></small>
+                <small id="charCount">0/500 characters</small>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Enquiry</button>
+        </form>
+
+        <div id="responseMessage" style="display: none;"></div>
+    </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <h3>The Second <span>Chapter</span></h3>
-                    <p>Creating readers, building futures.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Programmes</a></li>
-                        <li><a href="enquiry.html">Volunteer</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Braamfontein & Soweto</li>
-                        <li><i class="fas fa-envelope"></i> hello@secondchapter.org.za</li>
-                        <li><i class="fas fa-phone"></i> +27 11 123 4567</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 The Second Chapter. All rights reserved.</p>
-            </div>
-        </div>
+        <p>&copy; 2026 Green Planet Initiative</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/form-validation.js"></script>
 </body>
 </html>
